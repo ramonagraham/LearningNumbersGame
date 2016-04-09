@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button1"
             android:layout_margin="5dp"
-            android:onClick="play"
+            android:onClick="handleButton1"
              />
 
         <Button
@@ -79,6 +79,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button2"
             android:layout_margin="5dp"
+            android:onClick="handleButton2"
              />
 
     </LinearLayout>
