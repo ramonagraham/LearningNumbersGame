@@ -39,39 +39,16 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
         // and display new numbers on buttons
         model.generateNumbers();
         Button b1 = (Button) findViewById(R.id.button1);
-        Button b2 = (Button) findViewById(R.id.button2);
         b1.setText("" + model.getButton1() );
+
+        Button b2 = (Button) findViewById(R.id.button2);
         b2.setText("" + model.getButton2() );
-    }
 
-    /** determine if button1 is the correct answer */
-    public void handleButton1(View view){
-        boolean result = model.play(LearningNumbersGameModel.BUTTON_ONE);
-        model.generateNumbers();
-        model.getButton1();
-        model.getButton2();
-        model.getScore();
-        model.getGamesPlayed();
-        showToastMessage("You clicked the first button!");
-    }
+        Button bScore = (Button) findViewById(R.id.buttonScore);
+        bScore.setText("" + model.getScore() );
 
-    /** determine if button2 is the correct answer */
-    public void handleButton2(View view) {
-        boolean result = model.play(LearningNumbersGameModel.BUTTON_TWO);
-        model.generateNumbers();
-        model.getButton1();
-        model.getButton2();
-        model.getScore();
-        model.getGamesPlayed();
-        showToastMessage("You clicked the second button!");
-    }
-
-    public void showToastMessage(String msg){
-
-        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
-
-        toast.show();
-
+        Button bGamesPlayed = (Button) findViewById(R.id.buttonGamesPlayed);
+        bGamesPlayed.setText("" + model.getGamesPlayed() );
     }
 
     @Override
@@ -95,4 +72,33 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    /** determine if button1 is the correct answer */
+    public void handleButton1(View view){
+        boolean result = model.play(LearningNumbersGameModel.BUTTON_ONE);
+        model.generateNumbers();
+        model.getButton1();
+        model.getButton2();
+        model.getScore();
+        model.getGamesPlayed();
+        showToastMessage("You clicked the first button!");
+    }
+
+    /** determine if button2 is the correct answer */
+    public void handleButton2(View view) {
+        boolean result = model.play(LearningNumbersGameModel.BUTTON_TWO);
+        model.generateNumbers();
+        model.getButton1();
+        model.getButton2();
+        model.getScore();
+        model.getGamesPlayed();
+        showToastMessage("You clicked the second button!");
+    }
+
+    public void showToastMessage(String msg) {
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
 }

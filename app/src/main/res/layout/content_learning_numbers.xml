@@ -62,10 +62,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
-
-
-
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +80,36 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="20sp"
+        android:paddingTop="50sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonScore" />
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Games Played"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonGamesPlayed"
+            android:layout_margin="5dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

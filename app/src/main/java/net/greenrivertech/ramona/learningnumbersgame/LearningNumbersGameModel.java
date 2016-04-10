@@ -1,5 +1,7 @@
 package net.greenrivertech.ramona.learningnumbersgame;
 
+import android.widget.Toast;
+
 import java.util.Random;
 
 /**
@@ -22,9 +24,19 @@ public class LearningNumbersGameModel {
     public boolean play(int choice) {
         gamesPlayed++;
 
+        if(choice == 0 && button1 > button2) {
+            gamesWon++;
+            return true;
+        }
 
+        else if (choice == 1 && button2 > button1) {
+            gamesWon++;
+            return true;
+        }
 
-        return true;
+        else {
+            return false;
+        }
     }
 
     public void generateNumbers() {
@@ -32,6 +44,8 @@ public class LearningNumbersGameModel {
         button1 = randomNumber.nextInt(10) + 1;
         button2 = randomNumber.nextInt(10) + 1;
     }
+
+
 
     public int getButton1() {
         return button1;
