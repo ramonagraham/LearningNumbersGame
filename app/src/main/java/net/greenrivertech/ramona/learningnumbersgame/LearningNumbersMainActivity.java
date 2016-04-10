@@ -1,5 +1,6 @@
 package net.greenrivertech.ramona.learningnumbersgame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -44,11 +46,31 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
 
     /** determine if button1 is the correct answer */
     public void handleButton1(View view){
-
+        boolean result = model.play(LearningNumbersGameModel.BUTTON_ONE);
+        model.generateNumbers();
+        model.getButton1();
+        model.getButton2();
+        model.getScore();
+        model.getGamesPlayed();
+        showToastMessage("You clicked the first button!");
     }
 
     /** determine if button2 is the correct answer */
     public void handleButton2(View view) {
+        boolean result = model.play(LearningNumbersGameModel.BUTTON_TWO);
+        model.generateNumbers();
+        model.getButton1();
+        model.getButton2();
+        model.getScore();
+        model.getGamesPlayed();
+        showToastMessage("You clicked the second button!");
+    }
+
+    public void showToastMessage(String msg){
+
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+
+        toast.show();
 
     }
 
