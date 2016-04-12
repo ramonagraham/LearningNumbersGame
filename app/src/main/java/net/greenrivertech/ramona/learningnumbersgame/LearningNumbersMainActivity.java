@@ -77,6 +77,13 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
     /** determine if button1 is the correct answer */
     public void handleButton1(View view){
         boolean result = model.play(LearningNumbersGameModel.BUTTON_ONE);
+        if (result == true){
+            showToastMessage("You are correct!");
+        }
+        else {
+            showToastMessage("Incorrect!");
+        }
+
         model.generateNumbers();
         model.getButton1();
         model.getButton2();
@@ -98,13 +105,20 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
         b1.setText("" + model.getButton1() );
 
         Button b2 = (Button) findViewById(R.id.button2);
-        b2.setText("" + model.getButton2() );
+        b2.setText("" + model.getButton2());
 
     }
 
     /** determine if button2 is the correct answer */
     public void handleButton2(View view) {
         boolean result = model.play(LearningNumbersGameModel.BUTTON_TWO);
+        if (result == true){
+            showToastMessage("You are correct!");
+        }
+        else {
+            showToastMessage("Incorrect!");
+        }
+
         model.generateNumbers();
         model.getButton1();
         model.getButton2();
@@ -123,7 +137,6 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
         Button b2 = (Button) findViewById(R.id.button2);
         b2.setText("" + model.getButton2() );
 
-        showToastMessage("You clicked the second button!");
     }
 
     public void showToastMessage(String msg) {
