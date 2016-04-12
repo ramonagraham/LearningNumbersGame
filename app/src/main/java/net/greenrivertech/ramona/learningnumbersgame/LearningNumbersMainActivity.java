@@ -80,9 +80,26 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
         model.generateNumbers();
         model.getButton1();
         model.getButton2();
+
         model.getScore();
+        Button bScore = (Button) findViewById(R.id.buttonScore);
+        bScore.setText("" + model.getScore());
+
         model.getGamesPlayed();
         showToastMessage("You clicked the first button!");
+
+        //Button bScore = (Button) findViewById(R.id.buttonScore);
+        bScore.setText("" + model.getScore());
+
+        Button bGamesPlayed = (Button) findViewById(R.id.buttonGamesPlayed);
+        bGamesPlayed.setText("" + model.getGamesPlayed());
+
+        Button b1 = (Button) findViewById(R.id.button1);
+        b1.setText("" + model.getButton1() );
+
+        Button b2 = (Button) findViewById(R.id.button2);
+        b2.setText("" + model.getButton2() );
+
     }
 
     /** determine if button2 is the correct answer */
@@ -91,8 +108,21 @@ public class LearningNumbersMainActivity extends AppCompatActivity {
         model.generateNumbers();
         model.getButton1();
         model.getButton2();
+
         model.getScore();
+        Button bScore = (Button) findViewById(R.id.buttonScore);
+        bScore.setText("" + model.getScore());
+
         model.getGamesPlayed();
+        Button bGamesPlayed = (Button) findViewById(R.id.buttonGamesPlayed);
+        bGamesPlayed.setText("" + model.getGamesPlayed());
+
+        Button b1 = (Button) findViewById(R.id.button1);
+        b1.setText("" + model.getButton1() );
+
+        Button b2 = (Button) findViewById(R.id.button2);
+        b2.setText("" + model.getButton2() );
+
         showToastMessage("You clicked the second button!");
     }
 
